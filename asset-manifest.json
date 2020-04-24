@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/avorez.github.io/static/css/main.chunk.css",
+    "main.js": "/avorez.github.io/static/js/main.chunk.js",
+    "main.js.map": "/avorez.github.io/static/js/main.chunk.js.map",
+    "runtime-main.js": "/avorez.github.io/static/js/runtime-main.3756ce45.js",
+    "runtime-main.js.map": "/avorez.github.io/static/js/runtime-main.3756ce45.js.map",
+    "static/js/2.chunk.js": "/avorez.github.io/static/js/2.chunk.js",
+    "static/js/2.chunk.js.map": "/avorez.github.io/static/js/2.chunk.js.map",
+    "index.html": "/avorez.github.io/index.html",
+    "precache-manifest.346585dab33f78b13002ef655e0c2e4c.js": "/avorez.github.io/precache-manifest.346585dab33f78b13002ef655e0c2e4c.js",
+    "service-worker.js": "/avorez.github.io/service-worker.js",
+    "static/css/main.chunk.css.map": "/avorez.github.io/static/css/main.chunk.css.map",
+    "static/js/2.chunk.js.LICENSE.txt": "/avorez.github.io/static/js/2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3756ce45.js",
+    "static/js/2.chunk.js",
+    "static/css/main.chunk.css",
+    "static/js/main.chunk.js"
+  ]
+}
