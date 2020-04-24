@@ -1,0 +1,11 @@
+button {
+  padding: unset;
+  border-width: unset;
+  border-style: unset;
+  border-color: unset;
+  border-image: unset;
+}
+
+button:focus {
+  outline: none;
+}

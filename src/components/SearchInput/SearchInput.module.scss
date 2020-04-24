@@ -1,0 +1,41 @@
+$searchColor: #BBC2CA;
+
+.search__wrapper {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  border: 1.1px solid $searchColor;
+  border-radius: 5.5px;
+  transition: .2s;
+  padding: 1rem;
+  //color: #666666;
+  //font-style: italic;
+  font-size: 1rem;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 3px 0 $searchColor;
+}
+
+.input:focus {
+  transition: .2s;
+  outline: none;
+  box-shadow: 1px 1px 5px 3px rgba(1, 1, 1, .1);
+}
+
+.input:focus::placeholder {
+  color: transparent;
+  transition: .2s;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 0;
+  right: .5rem;
+  transform: translateY(50%);
+  color: $searchColor;
+}
+
+.searchIcon:hover {
+  cursor: pointer;
+}

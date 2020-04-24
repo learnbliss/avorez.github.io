@@ -1,0 +1,74 @@
+import React, {Component} from 'react';
+//import PropTypes from 'prop-types';
+import styles from './SearchInput.module.scss'
+import SearchIcon from '@material-ui/icons/Search';
+import {getDataSearch} from "../../actions/search";
+import {connect} from "react-redux";
+// import CloseIcon from '@material-ui/icons/Close';
+
+class SearchInput extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputValue: '',
+        }
+    }
+
+    render() {
+        return (
+            <div className={styles.search__wrapper}>
+                <input
+                    className={styles.input}
+                    type="text"
+                    value={this.state.inputValue}
+                    onChange={this.handleChange}
+                    onKeyDown={this.handleKeyDown}
+                    placeholder=""
+                    maxLength="30"
+                />
+                <div className={styles.searchIcon}>
+                    <SearchIcon
+                        onClick={this.filterIt}
+                    />
+                    {/*{this.state.inputValue ? <CloseIcon onClick={this.resetFilter}/> : null}*/}
+                </div>
+            </div>
+        );
+    }
+
+    handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            this.filterIt()
+        }
+    };
+
+    handleChange = async (event) => {
+        await this.setState({
+            inputValue: event.target.value
+        });
+        this.filterIt()
+    };
+
+    filterIt = () => {
+        this.props.getDataSearch(this.state.inputValue)
+    };
+
+    // resetFilter = () => {
+    //     this.props.onFilterChange('');
+    //     this.setState({
+    //         inputValue: ''
+    //     })
+    // }
+
+}
+
+//SearchInput.propTypes = {};
+
+export default connect(
+    (state) => {
+        return {
+            dataSearch: state.searchReducer.dataSearch,
+        }
+    }, {
+        getDataSearch, // action function
+    })(SearchInput); // component;

@@ -1,0 +1,91 @@
+$primary-color: #E94F37;
+$font-stack: Roboto, sans-serif;
+
+html {
+  height: 100%;
+  font-size: 14px;
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
+body {
+  font-family: $font-stack;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  background-color: rgba(210,216,209,0.91);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.rootApp {
+  height: 100%;
+
+  > div {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+  }
+
+  > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-height: 1200px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 3000px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+.animate {
+  animation: animText 5s infinite;
+}
+
+@keyframes animText {
+  0% {
+    transform: translateX(-5rem);
+  }
+  20% {
+    transform: translateX(-5rem);
+  }
+  40% {
+    transform: translateY(-5rem);
+  }
+  60% {
+    transform: translateX(5rem);
+  }
+  80% {
+    transform: translateY(5rem);
+  }
+  100% {
+    transform: translateX(-5rem);
+  }
+}
+
+@import "normalize.scss";

@@ -1,0 +1,50 @@
+$font-color: #7b79b4;
+$secondaryColor: #3D35A6;
+
+.root {
+  width: 320px;
+  height: 568px;
+  background-color: white;
+  overflow: auto;
+}
+
+.root__head {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(167, 173, 166, 0.91);
+
+  > button {
+    position: absolute;
+    right: .5rem;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+  }
+
+  > button:before,
+  > button:after {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    content: '';
+    height: .9rem;
+    width: 2px;
+    background-color: #6E7478;
+  }
+
+  > button:before {
+    transform: rotate(45deg);
+  }
+
+  > button:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.main {
+  padding: 1.5rem 1rem 1rem 1rem;
+  font-size: 1.1rem;
+}

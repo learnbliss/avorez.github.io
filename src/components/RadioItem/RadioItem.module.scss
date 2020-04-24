@@ -1,0 +1,61 @@
+$color: #3D35A6;
+
+li {
+    list-style-type: none;
+    color: black;
+    margin: 1rem 0;
+  }
+
+  input {
+    margin-right: 1rem;
+  }
+
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 2.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkMark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.4rem;
+    width: 1.4rem;
+    border: 1px solid #BBC2CA;
+    border-radius: 50%;
+  }
+
+  .container input:checked ~ .checkMark {
+    background-color: white;
+    border: 1px solid $color;
+  }
+
+  .checkMark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .container input:checked ~ .checkMark:after {
+    display: block;
+  }
+
+  .container .checkMark:after {
+    top: .4rem;
+    left: .4rem;
+    width: .65rem;
+    height: .65rem;
+    border-radius: 50%;
+    background-color: $color;
+  }
