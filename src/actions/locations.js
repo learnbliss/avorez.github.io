@@ -27,7 +27,7 @@ export const getLocationsThunk = () => {
         try {
              dispatch(triggerLoadingAC(true));
             let dataLocations;
-            if (window.location.hostname !== 'localhost') {
+            if (window.location.hostname !== 'localhost' || 'learnbliss.github.io') {
                 dataLocations = await fetchData(apiUrl);
             } else {
                 dataLocations = test;
