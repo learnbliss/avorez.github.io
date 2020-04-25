@@ -36,8 +36,8 @@ class LocationSearch extends Component {
 export default connect(
     (state) => {
         return {
-            // console1: console.log('state', state.accordionReducer),
-            // console2: console.log('state', state.searchReducer),
+            console1: console.log('state', state.accordionReducer),
+            console2: console.log('state', state.searchReducer),
             countryGroups: state.locationsReducer.countryGroups,
         }
     }, {

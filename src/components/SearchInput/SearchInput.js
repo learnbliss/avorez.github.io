@@ -57,13 +57,16 @@ class SearchInput extends Component {
     };
 
     componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('this.props.isSelect: ', this.props.isSelect);
+        console.log('prevProps.inputName: ', prevProps.inputName);
+        console.log('this.props.inputName: ', this.props.inputName);
         if (prevProps.inputName !== this.props.inputName) {
             this.props.getDataSearch('');
             this.setState((state) => {
                 return {inputValue: ''}
             });
-            console.log('this.state.inputValue: ', this.state.inputValue);
             this.inputRef.current.focus();
+            this.inputRef.current.value = '';
         }
     }
 
