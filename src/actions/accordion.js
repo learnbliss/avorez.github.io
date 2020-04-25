@@ -1,4 +1,3 @@
-import {searchAC} from "./search";
 
 export const ACCORDION_SELECT = 'ACCORDION_SELECT';
 export const INPUT_SELECT = 'INPUT_SELECT';
@@ -23,7 +22,6 @@ export const getNameAccordionThunk = (id) => {
             const {isSelect} = getState().accordionReducer;
             if (id !== isSelect) {
                 dispatch(inputAC(null));
-                dispatch(searchAC([]))
             }
             dispatch(accordionAC(id));
         } catch (err) {

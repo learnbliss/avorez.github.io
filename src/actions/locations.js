@@ -1,4 +1,3 @@
-import {fetchData, apiUrl} from "../api/fetch";
 import test from '../mock/test'
 
 

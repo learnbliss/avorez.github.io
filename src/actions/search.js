@@ -18,7 +18,7 @@ export const getDataSearch = (inputValue) => {
     return async (dispatch, getState) => {
         try {
             const {isSelect, inputName} = getState().accordionReducer;
-            const {dataLocations, countryGroups} = getState().locationsReducer;
+            const {dataLocations} = getState().locationsReducer;
             let dataSearch;
             // const getIdCountries = () => {
             //     let id, input;
@@ -30,10 +30,9 @@ export const getDataSearch = (inputValue) => {
             // };
             let getArrToSearch = () => {
                 let isSelectInputNameString = `${isSelect} ${inputName}`;
-                console.log('isSelectInputNameString: ', isSelectInputNameString);
                 switch (isSelectInputNameString) {
                     case 'Россия Вся Россия':
-                        return [{name: 'Не работает'}];
+                        return [{name: 'Не работает ¯\\_(ツ)_/¯'}];
                     case 'Россия Область':
                         return Object.values(dataLocations.payload.regions);
                     case 'Россия Город':
@@ -45,25 +44,24 @@ export const getDataSearch = (inputValue) => {
                             return item.group_id === 2
                         });
                     case 'Страны СНГ Отдельная страна':
-                        return [{name: 'Не работает'}];
+                        return [{name: 'Не работает ¯\\_(ツ)_/¯'}];
                     case 'Остальные страны Все страны':
                         console.log('Object.values(dataLocations.payload.countries): ', Object.values(dataLocations.payload.countries));
                         return Object.values(dataLocations.payload.countries).filter((item) => {
                             return item.group_id === 3
                         });
                     case 'Остальные страны Отдельная страна':
-                        return [{name: 'Не работает'}];
+                        return [{name: 'Не работает ¯\\_(ツ)_/¯'}];
                     case 'Страны Евросоюза Все страны Евросоюза':
                         return Object.values(dataLocations.payload.countries).filter((item) => {
                             return item.group_id === 4
                         });
                     case 'Страны Евросоюза Отдельная страна':
-                        return [{name: 'Не работает'}];
+                        return [{name: 'Не работает ¯\\_(ツ)_/¯'}];
                     default:
                         return console.log('');
                 }
             };
-            console.log('getArrToSearch(): ', getArrToSearch());
             let intermediateValue = () => {
                 let arr = [];
                 getArrToSearch().filter((item) => {

@@ -4,6 +4,7 @@ import styles from './SearchInput.module.scss'
 import SearchIcon from '@material-ui/icons/Search';
 import {getDataSearch} from "../../actions/search";
 import {connect} from "react-redux";
+
 // import CloseIcon from '@material-ui/icons/Close';
 
 class SearchInput extends Component {
@@ -11,7 +12,8 @@ class SearchInput extends Component {
         super(props);
         this.state = {
             inputValue: '',
-        }
+        };
+        this.inputRef = React.createRef();
     }
 
     render() {
@@ -20,11 +22,12 @@ class SearchInput extends Component {
                 <input
                     className={styles.input}
                     type="text"
-                    value={this.state.inputValue}
+                    autoFocus={true}
                     onChange={this.handleChange}
                     onKeyDown={this.handleKeyDown}
                     placeholder=""
                     maxLength="30"
+                    ref={this.inputRef}
                 />
                 <div className={styles.searchIcon}>
                     <SearchIcon
@@ -53,13 +56,23 @@ class SearchInput extends Component {
         this.props.getDataSearch(this.state.inputValue)
     };
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.inputName !== this.props.inputName) {
+            this.props.getDataSearch('');
+            this.setState((state) => {
+                return {inputValue: ''}
+            });
+            console.log('this.state.inputValue: ', this.state.inputValue);
+            this.inputRef.current.focus();
+        }
+    }
+
     // resetFilter = () => {
     //     this.props.onFilterChange('');
     //     this.setState({
     //         inputValue: ''
     //     })
     // }
-
 }
 
 //SearchInput.propTypes = {};
@@ -68,6 +81,7 @@ export default connect(
     (state) => {
         return {
             dataSearch: state.searchReducer.dataSearch,
+            inputName: state.accordionReducer.inputName,
         }
     }, {
         getDataSearch, // action function
