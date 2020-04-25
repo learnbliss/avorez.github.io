@@ -33,7 +33,7 @@ export const getDataSearch = (inputValue) => {
                 console.log('isSelectInputNameString: ', isSelectInputNameString);
                 switch (isSelectInputNameString) {
                     case 'Россия Вся Россия':
-                        return console.log('не реализовано');
+                        return [{name: 'Не работает'}];
                     case 'Россия Область':
                         return Object.values(dataLocations.payload.regions);
                     case 'Россия Город':
@@ -45,19 +45,20 @@ export const getDataSearch = (inputValue) => {
                             return item.group_id === 2
                         });
                     case 'Страны СНГ Отдельная страна':
-                        return console.log('');
-                    case 'Остальные Страны Все страны':
+                        return [{name: 'Не работает'}];
+                    case 'Остальные страны Все страны':
+                        console.log('Object.values(dataLocations.payload.countries): ', Object.values(dataLocations.payload.countries));
                         return Object.values(dataLocations.payload.countries).filter((item) => {
                             return item.group_id === 3
                         });
-                    case 'Остальные Страны Отдельная страна':
-                        return console.log('');
+                    case 'Остальные страны Отдельная страна':
+                        return [{name: 'Не работает'}];
                     case 'Страны Евросоюза Все страны Евросоюза':
                         return Object.values(dataLocations.payload.countries).filter((item) => {
                             return item.group_id === 4
                         });
                     case 'Страны Евросоюза Отдельная страна':
-                        return console.log('');
+                        return [{name: 'Не работает'}];
                     default:
                         return console.log('');
                 }

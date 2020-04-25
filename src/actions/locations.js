@@ -27,12 +27,12 @@ export const getLocationsThunk = () => {
         try {
              dispatch(triggerLoadingAC(true));
             let dataLocations;
-            if (window.location.hostname !== 'localhost' || window.location.hostname !== 'learnbliss.github.io') {
-                dataLocations = await fetchData(apiUrl);
-            } else {
+            // if (window.location.hostname !== 'localhost' || window.location.hostname !== 'learnbliss.github.io') {
+            //     dataLocations = await fetchData(apiUrl);
+            // } else {
                 dataLocations = test;
                 console.log('dataLocations: ', dataLocations);
-            }
+            // }
             const countryGroups = Object.values(dataLocations.payload.country_groups);
             dispatch(locationsAC( dataLocations, countryGroups));
         } catch (err) {
