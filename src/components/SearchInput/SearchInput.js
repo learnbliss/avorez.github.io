@@ -22,6 +22,7 @@ class SearchInput extends Component {
                 <input
                     className={styles.input}
                     type="text"
+                    value={this.state.inputValue}
                     autoFocus={true}
                     onChange={this.handleChange}
                     onKeyDown={this.handleKeyDown}
@@ -57,16 +58,13 @@ class SearchInput extends Component {
     };
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('this.props.isSelect: ', this.props.isSelect);
-        console.log('prevProps.inputName: ', prevProps.inputName);
-        console.log('this.props.inputName: ', this.props.inputName);
         if (prevProps.inputName !== this.props.inputName) {
             this.props.getDataSearch('');
             this.setState((state) => {
                 return {inputValue: ''}
             });
             this.inputRef.current.focus();
-            this.inputRef.current.value = '';
+            // this.inputRef.current.value = '';
         }
     }
 

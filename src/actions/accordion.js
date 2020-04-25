@@ -23,6 +23,7 @@ export const getNameAccordionThunk = (id) => {
             const {isSelect} = getState().accordionReducer;
             if (id !== isSelect) {
                 dispatch(inputAC(null));
+                dispatch(searchAC([]))
             }
             dispatch(accordionAC(id));
         } catch (err) {
@@ -34,10 +35,6 @@ export const getNameAccordionThunk = (id) => {
 export const getNameInputThunk = (name) => {
     return async (dispatch, getState) => {
         try {
-            const {inputName} = getState().accordionReducer;
-            if (inputName === null) {
-                dispatch(searchAC([]))
-            }
             dispatch(inputAC(name));
         } catch (err) {
             console.error(err);
