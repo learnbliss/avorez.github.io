@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/avorez.github.io/index.html"
   },
   {
-    "revision": "b1eeb544dc2c2e076f3f",
+    "revision": "d317e059f1cc31c93ecd",
     "url": "/avorez.github.io/static/css/main.chunk.css"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/avorez.github.io/static/js/2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b1eeb544dc2c2e076f3f",
+    "revision": "d317e059f1cc31c93ecd",
     "url": "/avorez.github.io/static/js/main.chunk.js"
   },
   {
